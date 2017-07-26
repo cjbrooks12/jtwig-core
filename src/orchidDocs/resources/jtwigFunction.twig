@@ -1,0 +1,17 @@
+{% extends page | template('layout') %}
+
+{% block pageContent %}
+
+    <section id="summary">
+        <header class="major"><h2>{{ page.title }}</h2></header>
+        <article>
+            {{ page.content }}
+        </article>
+    </section>
+
+    <h3>Usage</h3>
+    <pre>
+        {{ '{{ var | ' }}{{ page.title | lower }}{{ ' }}' }}
+    </pre>
+
+{% endblock %}

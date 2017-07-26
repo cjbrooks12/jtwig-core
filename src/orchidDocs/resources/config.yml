@@ -1,0 +1,16 @@
+
+about:
+  name: Jtwig Documentation
+  description: Jtwig Documentation
+
+colors:
+  primary: '#28c'
+  secondary: '#222222'
+
+menu:
+  - type: 'jtwigTags'
+  - type: 'jtwigFunctions'
+
+generators:
+  disabled:
+    - 'JavadocGenerator'
