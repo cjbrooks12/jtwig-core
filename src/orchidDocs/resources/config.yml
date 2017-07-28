@@ -7,9 +7,17 @@ colors:
   primary: '#28c'
   secondary: '#222222'
 
+wiki:
+  sections:
+    - 'userManual'
+    - 'reference'
+
 menu:
   - type: 'jtwigTags'
   - type: 'jtwigFunctions'
+  - type: 'index'
+    title: 'Wiki'
+    index: 'wiki'
 
 generators:
   disabled:

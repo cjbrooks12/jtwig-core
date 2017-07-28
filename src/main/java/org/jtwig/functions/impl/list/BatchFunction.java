@@ -10,7 +10,15 @@ import java.util.List;
 
 import static org.jtwig.util.FunctionValueUtils.getNumber;
 
+/**
+ * The batch filter "batches" items by returning a list of lists with the given number of items. A second parameter can
+ * be provided and used to fill in missing items.
+ *
+ * @functionName batch
+ * @compatibilityUrl https://twig.symfony.com/doc/2.x/filters/batch.html
+ */
 public class BatchFunction extends SimpleJtwigFunction {
+
     @Override
     public String name() {
         return "batch";
@@ -57,5 +65,27 @@ public class BatchFunction extends SimpleJtwigFunction {
             result.add(batch);
         }
         return result;
+    }
+
+    /**
+     * We'll use the 'apply' function to actually run the final function body. In addition to providing the structure
+     * for generating documentation, it also gives us more type-safe function calls.
+     *
+     * @param source the source object to break into batches
+     * @param groupSize the size of each batch
+     * @return a list of lists of size `groupSize`
+     */
+    public List<List<Object>> apply(List<Object> source, int groupSize) {
+        return null;
+    }
+
+    /**
+     * @param source the source object to break into batches
+     * @param groupSize the size of each batch
+     * @param padding the object used to fill in missing places in the final batch
+     * @return a list of lists of size `groupSize`
+     */
+    public List<List<Object>> apply(List<Object> source, int groupSize, Object padding) {
+        return null;
     }
 }

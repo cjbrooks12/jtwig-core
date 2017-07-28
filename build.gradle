@@ -52,9 +52,10 @@ dependencies {
     testCompile 'org.unitils:unitils-core:3.4.2'
     testCompile 'net.jperf:jperf:1.0.3'
 
-    orchidDocsCompile 'io.github.javaeden.orchid:OrchidCore:v0.2.4'
-    orchidDocsCompile 'io.github.javaeden.orchid:OrchidJavadoc:v0.2.4'
-    orchidDocsCompile 'io.github.javaeden.orchid:OrchidEditorial:v0.2.4'
+    orchidDocsCompile 'io.github.javaeden.orchid:OrchidCore:v0.2.5'
+    orchidDocsCompile 'io.github.javaeden.orchid:OrchidJavadoc:v0.2.5'
+    orchidDocsCompile 'io.github.javaeden.orchid:OrchidWiki:v0.2.5'
+    orchidDocsCompile 'io.github.javaeden.orchid:OrchidEditorial:v0.2.5'
     orchidDocsCompile files(org.gradle.internal.jvm.Jvm.current().toolsJar)
 }
 

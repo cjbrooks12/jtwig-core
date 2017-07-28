@@ -9,9 +9,43 @@
         </article>
     </section>
 
-    <h3>Usage</h3>
-    <pre>
-        {{ '{{ var | ' }}{{ page.title | lower }}{{ ' }}' }}
-    </pre>
+    <p>{{ page.functionDescription }}</p>
+
+    <p><a href="https://twig.symfony.com/{{- page.functionName -}}">Twig PHP documentation</a></p>
+
+    {%- for variant in page.variants -%}
+        <div class="box">
+            <pre>
+                <code>
+                    {{- '{{ var | ' -}}{{- page.functionName -}}{{- '(' -}}
+
+                    {%- for param in variant.parameters -%}
+                        {{- param.type.simpleTypeName -}}{{ ' ' }}{{- param.name -}}
+                        {%- if not (loop.last) -%}
+                            {{- ', ' -}}
+                        {%- endif -%}
+                    {%- endfor -%}
+
+                    {{- ') }}' -}}
+                </code>
+            </pre>
+            <table>
+                <tbody>
+                    {%- for param in variant.paramTags -%}
+                        <tr>
+                            <td><code>{{ param.parameterName }}</code></td>
+                            <td>{{ param.parameterComment }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><code>{{ variant.returnType.simpleTypeName }}</code></td>
+                        <td>Return type</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    {% endfor %}
 
 {% endblock %}
